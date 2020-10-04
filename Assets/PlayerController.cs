@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource myAudio;
     private bool isCrashed = false;
 
+    public Tower Tower1;
+    public Tower Tower2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,22 +99,25 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Tower")
-        {
+        {   
             closestTower = collision.gameObject;
+
             Tower coliderTower = collision.gameObject.GetComponent<Tower>();
             if (coliderTower != null)
             {
-                coliderTower.SetPlayer(this);
+                
+                if (coliderTower.gameObject.name == "Tower 1")
+                {
+                    
+                    Tower1.SetPlayer(this);
+                }
+                else if (coliderTower.gameObject.name == "Tower 2")
+                {
+                    
+                    Tower2.SetPlayer(this);
+                }
             }
-            /*else if (coliderTower.gameObject.name == "Tower 2")
-            {
-                coliderTower = Tower2;
-                coliderTower.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-            }*/
-
             
-            
-            //Debug.Log(coliderTower.gameObject.name);
             //Change tower color black to green as indicator
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
@@ -127,6 +133,7 @@ public class PlayerController : MonoBehaviour
             hookedTower = null;
             //Change tower color back to normal
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
         }
     }
 

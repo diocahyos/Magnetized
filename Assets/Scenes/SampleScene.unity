@@ -509,6 +509,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &486587478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486587479}
+  - component: {fileID: 486587481}
+  - component: {fileID: 486587480}
+  m_Layer: 0
+  m_Name: Tower1Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486587479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486587478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1495052054}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486587480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486587478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7453bac39bcef4f4f8eb54716210a57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2011387817}
+--- !u!65 &486587481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486587478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &513018882
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +808,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 948867661}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &589214768 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1640669513134972599, guid: 40bc43c0740f944459a9f20c4eca4928,
+    type: 3}
+  m_PrefabInstance: {fileID: 948867661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &589214769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7453bac39bcef4f4f8eb54716210a57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2011387817}
+  player: {fileID: 0}
 --- !u!1 &648935753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1774,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1850920686}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1495052054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1640669513134972599, guid: 40bc43c0740f944459a9f20c4eca4928,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850920686}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1495052055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,7 +1792,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7453bac39bcef4f4f8eb54716210a57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!1 &1504589530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504589531}
+  - component: {fileID: 1504589533}
+  - component: {fileID: 1504589532}
+  m_Layer: 0
+  m_Name: Tower2Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1504589531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504589530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 589214768}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1504589532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504589530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7453bac39bcef4f4f8eb54716210a57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 2011387817}
+--- !u!65 &1504589533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504589530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1573678031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1983,6 +2111,8 @@ MonoBehaviour:
   moveSpeed: 5
   pullForce: 100
   rotateSpeed: 360
+  Tower1: {fileID: 486587480}
+  Tower2: {fileID: 1504589532}
 --- !u!50 &2011387818
 Rigidbody2D:
   serializedVersion: 4
