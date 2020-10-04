@@ -35,34 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         //Move the object
         rb2D.velocity = -transform.up * moveSpeed;
-        
-        if (Input.GetKey(KeyCode.Z) && !isPulled)
-        {
-            if(closestTower != null && hookedTower == null)
-            {
-                hookedTower = closestTower;
-            }
-            if (hookedTower)
-            {
-                float distance = Vector2.Distance(transform.position, hookedTower.transform.position);
-
-                //Gravitasi toward tower
-                Vector3 pullDirection = (hookedTower.transform.position - transform.position).normalized;
-                float newPullForce = Mathf.Clamp(pullForce / distance, 20, 50);
-                rb2D.AddForce(pullDirection * newPullForce);
-
-                //Angular velocity
-                rb2D.angularVelocity = -rotateSpeed / distance;
-                isPulled = true;
-            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            rb2D.angularVelocity = 0;
-            isPulled = false;
-            hookedTower = null;
-        }
 
         if (isCrashed)
         {
@@ -126,7 +98,20 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Tower")
         {
             closestTower = collision.gameObject;
+            Tower coliderTower = collision.gameObject.GetComponent<Tower>();
+            if (coliderTower != null)
+            {
+                coliderTower.SetPlayer(this);
+            }
+            /*else if (coliderTower.gameObject.name == "Tower 2")
+            {
+                coliderTower = Tower2;
+                coliderTower.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            }*/
 
+            
+            
+            //Debug.Log(coliderTower.gameObject.name);
             //Change tower color black to green as indicator
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
@@ -143,6 +128,37 @@ public class PlayerController : MonoBehaviour
             //Change tower color back to normal
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
+    }
+
+    public void Pull()
+    {
+        if (!isPulled)
+        {
+            if (closestTower != null && hookedTower == null)
+            {
+                hookedTower = closestTower;
+            }
+            if (hookedTower)
+            {
+                float distance = Vector2.Distance(transform.position, hookedTower.transform.position);
+
+                //Gravitasi toward tower
+                Vector3 pullDirection = (hookedTower.transform.position - transform.position).normalized;
+                float newPullForce = Mathf.Clamp(pullForce / distance, 20, 50);
+                rb2D.AddForce(pullDirection * newPullForce);
+
+                //Angular velocity
+                rb2D.angularVelocity = -rotateSpeed / distance;
+                isPulled = true;
+            }
+        }
+    }
+
+    public void Release()
+    {
+            rb2D.angularVelocity = 0;
+            isPulled = false;
+            hookedTower = null;
     }
 
 }
